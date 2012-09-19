@@ -4,6 +4,7 @@
 
 # 目をかけてやってもいい
 !/.gitignore
+!/README
 !/keytouch.rb
 
 # 頑として無視
