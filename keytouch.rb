@@ -11,24 +11,43 @@ s = gets.to_i
 
 case s
   when 0
+    puts "はじめるよ？[Enter]"
+    abs = gets
+    system "clear"
+
     3.times do 
-      code=(("a".."z").to_a).shuffle[0..9].join
-      
-      puts "" , code.blue.bold
-      i = 0
-        while i < 10 do
-          system "stty raw -echo"
-          a = STDIN.getc 
-          if  code[i].chr == a then
-            print a.red.bold
-            i += 1
-          else
-          ;;
-          end
+      code = (("a".."z").to_a).shuffle[0..9].join.upcase
+
+      codea = code.split(//)
+
+      left_hand = "qazwsxedcrfvtgby".upcase
+      print "\s\s\s\s\s\s\s\s\s"
+
+      codea.each do |chr|
+        if left_hand =~ /#{chr}/
+          print chr.blue.bold
+        else
+          print chr.red.bold
         end
-        system "stty -raw echo"
-        puts ""
+      end
+
+      puts ""
+
+      #puts "" , code.blue.bold
+      i = 0
+      print "\s\s\s\s\s\s\s\s\s"
+      while i < 10 do
+        system "stty raw -echo"
+        a = STDIN.getc.upcase
+        if  code[i].chr == a then
+          print a.green.bold
+          i += 1
+        end
+      end
+      system "stty -raw echo"
+      puts "\n\n"
     end
+    puts "*********************\nしゅうりょー(・ω <)/\nよくできたね？\n*********************"
   when 1
     puts "under developping\n"
   when 2
