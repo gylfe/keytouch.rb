@@ -4,6 +4,7 @@
 
 # 目をかけてやってもいい
 !/.gitignore
+!/Gemfile
 !/README
 !/keytouch.rb
 !/library.rb
