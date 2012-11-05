@@ -6,5 +6,6 @@
 !/.gitignore
 !/README
 !/keytouch.rb
+!/library.rb
 
 # 頑として無視

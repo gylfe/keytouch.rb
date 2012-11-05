@@ -1,10 +1,10 @@
 # encoding: utf-8
-require './window'
+require './library'
 
 window = Window.new
 window.countdown
 
 mondai = Mondai.new
 mondai.three_time
-
+mondai.score
 window.finished
