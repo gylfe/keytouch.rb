@@ -30,7 +30,7 @@ class Window
          ┗┛
         "]
 
-        puts "はじめるよ？[Enter]"
+        puts "\nもんだいすう: 10文字x03行\n\nはじめるよ？[えんたー]"
         abs = gets
         count.each do |i|
             system "clear"
@@ -127,6 +127,8 @@ class Mondai
     end
 
     def score
-        printf("kakattazikan => %0.1f", @score)
+        print("かかったじかん => ")
+        printf("%0.1f", @score).red
+        print("びょう\n")
     end
 end
