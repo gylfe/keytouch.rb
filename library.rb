@@ -30,7 +30,8 @@ class Window
          ┗┛
         "]
 
-        puts "\nもんだいすう: 10文字x03行\n\nはじめるよ？[えんたー]"
+        line = "10文字 x 03行".on_blue.bold
+        puts "\nもんだいすう\n=> #{line}\n\n\nはじめるよ？ [えんたー]"
         abs = gets
         count.each do |i|
             system "clear"
@@ -41,7 +42,10 @@ class Window
     end
     
     def select
-        printf "--- --- ---\n0.sample mode\n1.100char mode\n2.200char mode\n3.quit\n--- --- ---\nchoose mode: "
+        printf "--- "*3
+        printf "\n0.sample mode\n1.100char mode\n2.200char mode\n3.quit\n"
+        printf "--- "*3
+        printf "\nchoose mode: "
 
         s = gets.to_i
 
@@ -59,22 +63,22 @@ class Window
     end
 
     def finished
-        puts "************************".blink
+        puts "**************************".blink
         puts "しゅうりょー\s\s\s(・ω・ )"
         puts "よくできたね？"
-        puts "************************".blink
+        puts "**************************".blink
     end
 end
 
 class Mondai
     def initialize
-        @lefty = "qazwsxedcrfvtgbyh".upcase
+        @lefty = "qazwsxedcrfvtgby".upcase
         @code = ""
         @score = 0
     end
 
     def window_t
-        print "Left".blue + ":" + "Right".magenta + "\n"*2
+        print "左".blue + ":" + "右".magenta + "\n"*2
     end
 
     def window_l
@@ -127,8 +131,7 @@ class Mondai
     end
 
     def score
-        print("かかったじかん => ")
-        printf("%0.1f", @score).red
-        print("びょう\n")
+        time = sprintf("%0.1f", @score).on_red.bold
+        print("TIME\n=> " + time + "\sびょう\n\n")
     end
 end

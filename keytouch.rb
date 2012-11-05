@@ -7,4 +7,4 @@ window.countdown
 mondai = Mondai.new
 mondai.three_time
 mondai.score
-window.finished
+# window.finished
