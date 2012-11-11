@@ -6,7 +6,7 @@
 !/.gitignore
 !/.watchr
 !/Gemfile
-!/README
+!/README.md
 !/keytouch.rb
 !/library.rb
 # 頑として無視
