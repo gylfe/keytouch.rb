@@ -1,11 +1,16 @@
-# Keytouch on Console! 
+# Keytouch on Console! #
 
-console上でキータッチ練習
+## Description ##
++ Concept
+ + console上でキータッチ練習
++ Comment
+ + プログラミングの入門者です
+ + git管理の勉強がてらにボチボチやっていこうかと
+ + **アドバイスあったら感謝です!**
 
-プログラミングの入門者です.
-git管理の勉強がてらにボチボチやっていこうと思っています.
+## Require
++ Ruby
++ gem "term-ansicolor" => `bindle install`
 
-アドバイスあったら感謝です!
-
-# Usage
-    `ruby keytouch.rb`
+## Usage ##
+    ruby keytouch.rb

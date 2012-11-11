@@ -1,8 +1,8 @@
- source :rubygems
+source :rubygems
 
- gem 'term-ansicolor
+gem 'term-ansicolor'
 
- group :developer do
+group :developer do
     gem 'pry'
     gem 'watchr'
- end
+end
