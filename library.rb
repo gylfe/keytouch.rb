@@ -30,13 +30,34 @@ class Window
          ┗┛
         "]
 
-        line = "10文字 x 03行".on_blue.bold
-        puts "\nもんだいすう\n=> #{line}\n\n\nはじめるよ？ [えんたー]"
-        abs = gets
+        line = "10 characters x 03 lines".on_blue.bold
+        system "clear"
+        mission = "Mission".split(//)
+        puts ""
+        sleep 0.3
+        mission.each do |ch|
+            sleep 0.20
+            print ch
+        end
+        sleep 0.9
+        print "\n="
+        sleep 0.45
+        print ">"
+        sleep 0.45
+        print "\s#{line}"
+        sleep 0.6
+        puts "\n\n"
+        3.times do
+            sleep 0.28
+            print '.'
+        end
+        sleep 0.5
+        print "Go Ahead? [Yy]"
+        abs = gets(1)
         count.each do |i|
             system "clear"
             puts i
-            sleep 1
+            sleep 0.92
         end
         system "clear"
     end
@@ -62,19 +83,12 @@ class Window
         end
     end
 
-    def finished
-        puts "**************************".blink
-        puts "しゅうりょー\s\s\s(・ω・ )"
-        puts "よくできたね？"
-        puts "**************************".blink
-    end
 end
 
 class Mondai
     def initialize
         @lefty = "qazwsxedcrfvtgby".upcase
-        @code = ""
-        @score = 0
+        @code = []
     end
 
     def window_t
@@ -86,7 +100,7 @@ class Mondai
     end
 
     def make_mondai
-        @code = (("a".."z").to_a).shuffle[0..9].join.upcase.split(//)
+        @code = (("A".."Z").to_a).shuffle[0..9]
     end
 
     def question
@@ -131,7 +145,17 @@ class Mondai
     end
 
     def score
-        time = sprintf("%0.1f", @score).on_red.bold
-        print("TIME\n=> " + time + "\sびょう\n\n")
+        time = sprintf("%0.1f", @score).on_red.bold.blink
+        sleep 0.2
+        puts("Mission Complete!")
+        sleep 0.7
+        print("TIME is")
+        sleep 0.3
+        3.times do
+            sleep 0.2
+            print '.'
+        end
+        sleep 0.4
+        print ("\n=> " + time + "\ssec.\n\n")
     end
 end
